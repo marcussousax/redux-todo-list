@@ -14,6 +14,7 @@ function App() {
     const handleSubmit = (e, value) => {
         e.preventDefault()
         dispatch(addTodo(value))
+        setInputValue('')
     }
 
     const handleDelete = (item) => {
