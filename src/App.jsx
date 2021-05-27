@@ -1,26 +1,43 @@
 import React from 'react'
 import './App.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { addTodo, deleteTodo, updateTodo } from './store/Todos/Todos.actions'
+import { selectCompletedTodosCount, selectTodos, selectTodosCount } from './store/Todos/Todos.selectors'
 
 function App() {
 
-    const [todos, setTodos] = React.useState([])
+    const dispatch = useDispatch()
+    const todos = useSelector(selectTodos)
+
     const [inputValue, setInputValue] = React.useState('')
 
     const handleSubmit = (e, value) => {
         e.preventDefault()
-        setTodos([...todos, {
-            value: value,
-            completed: false
-        }])
+        dispatch(addTodo(value))
     }
 
+    const handleDelete = (item) => {
+        dispatch(deleteTodo(item))
+    }
+
+
+    const toggleComplete = (item) => {
+        dispatch(updateTodo(item))
+    }
     return (
         <div className="App">
             <div className={'wrapper'}>
-                <h2>Redux Todo List - <Counter todos={todos} /></h2>
+                <h2>Redux Todo List - <TotalCounter todos={todos} /></h2>
                 <List>
-                    {todos.map((item, index) => <ListItem key={index}>{item.value}</ListItem>)}
+                    {todos.map((item, index) =>
+                        <ListItem key={index}>
+                            <button className={'btn-complete'} onClick={() => toggleComplete(item)}>V</button>
+                            <span className={item.completed ? 'completed' : ''}>{item.value}</span>
+                            <button className={'btn-delete'} onClick={() => handleDelete(item)}>X</button>
+                        </ListItem>
+                    )}
                 </List>
+                <CompletedCounter />
                 <form onSubmit={(e) => handleSubmit(e, inputValue)}>
                     <input type="text"
                            value={inputValue}
@@ -33,8 +50,14 @@ function App() {
     )
 }
 
-const Counter = ({ todos }) => {
-    return <span>{todos.length}</span>
+const TotalCounter = () => {
+    const todosCount = useSelector(selectTodosCount)
+    return <span>Total Items:{todosCount}</span>
+}
+
+const CompletedCounter = () => {
+    const completedCount = useSelector(selectCompletedTodosCount)
+    return <div style={{textAlign: 'center'}}>Completed Items: {completedCount}</div>
 }
 
 const List = ({children}) => <ol>{children}</ol>
