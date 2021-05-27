@@ -1,6 +1,6 @@
 import React from 'react'
-import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
+import './App.css'
 import { addTodo, deleteTodo, updateTodo } from './store/Todos/Todos.actions'
 import { selectCompletedTodosCount, selectTodos, selectTodosCount } from './store/Todos/Todos.selectors'
 
