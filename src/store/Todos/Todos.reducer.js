@@ -3,7 +3,7 @@ export default function (state = [], action) {
     switch (action.type) {
         case 'ADD':
             return [...state, {
-                value: action.payload, // In this case action.payload is received a input text value
+                value: action.payload, // In this case action.payload receives an input text value
                 completed: false
             }]
         case 'DELETE':
