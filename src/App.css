@@ -1,0 +1,83 @@
+body:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    opacity: 0.3;
+    background-image: linear-gradient(135deg, #f7d745 25%, transparent 25%), linear-gradient(225deg, #f7d745 25%, transparent 25%), linear-gradient(45deg, #f7d745 25%, transparent 25%), linear-gradient(315deg, #f7d745 25%, #ffffff 25%);
+    background-position: 16px 0, 16px 0, 0 0, 0 0;
+    background-size: 32px 32px;
+    background-repeat: repeat;
+}
+
+
+.App {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 700px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    border: 1px solid #f7d745;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+}
+
+h2 {
+    text-align: center;
+}
+
+ol {
+    border: 1px solid #f7d745;
+    margin: 0 80px 80px;
+    padding: 40px;
+    list-style: none;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+}
+
+form {
+    text-align: center;
+}
+
+input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+
+}
+
+li,
+input[type="text"] {
+    background: transparent;
+    font-size: 18px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+input[type="text"] {
+    border: none;
+    text-align: center;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+input[type="text"]::placeholder {
+    color: #ccc;
+}
+button[type="submit"] {
+    display: none;
+}
