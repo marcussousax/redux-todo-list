@@ -1,3 +1,3 @@
-export const selectTodos = state => state.todos
-export const selectTodosCount = state => state.todos.length
-export const selectCompletedTodosCount = state => state.todos.filter(todo => todo.completed === true).length
+export const selectTodos = state => state.todos.present
+export const selectTodosCount = state => state.todos.present.length
+export const selectCompletedTodosCount = state => state.todos.present.filter(todo => todo.completed === true).length

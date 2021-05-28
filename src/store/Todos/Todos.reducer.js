@@ -1,5 +1,6 @@
-// eslint-disable-next-line import/no-anonymous-default-export
-export default function (state = [], action) {
+import undoable from 'redux-undo'
+
+export default undoable(function(state = [], action) {
     switch (action.type) {
         case 'ADD':
             return [...state, {
@@ -17,4 +18,5 @@ export default function (state = [], action) {
         default:
             return state
     }
-}
+})
+

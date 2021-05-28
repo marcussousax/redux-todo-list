@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
 import { addTodo, deleteTodo, updateTodo } from './store/Todos/Todos.actions'
 import { selectCompletedTodosCount, selectTodos, selectTodosCount } from './store/Todos/Todos.selectors'
+import TodosUndoRedo from './store/Todos/TodosUndoRedo'
 
 function App() {
 
@@ -21,13 +22,14 @@ function App() {
         dispatch(deleteTodo(item))
     }
 
-
     const toggleComplete = (item) => {
         dispatch(updateTodo(item))
     }
+
     return (
         <div className="App">
             <div className={'wrapper'}>
+                <TodosUndoRedo />
                 <h2>Redux Todo List - <TotalCounter todos={todos} /></h2>
                 <List>
                     {todos.map((item, index) =>
