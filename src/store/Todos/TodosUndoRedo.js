@@ -1,16 +1,17 @@
 import React from 'react'
 import { ActionCreators as UndoActionCreators } from 'redux-undo'
 import { connect } from 'react-redux'
+import { FaUndoAlt, FaRedoAlt } from 'react-icons/fa';
 
 let TodosUndoRedo = ({canUndo, canRedo, onUndo, onRedo}) => (
-    <p>
+    <div className={'undo-redo'}>
         <button onClick={onUndo} disabled={!canUndo}>
-            Undo
+            <FaUndoAlt /> Undo
         </button>
         <button onClick={onRedo} disabled={!canRedo}>
-            Redo
+            <FaRedoAlt /> Redo
         </button>
-    </p>
+    </div>
 )
 
 const mapStateToProps = (state) => ({
