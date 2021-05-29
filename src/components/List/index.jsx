@@ -21,9 +21,10 @@ const List = ({children}) => {
     return (
         <div className={'list-wrapper'}>
             <div className={'list-toolbar'}>
-                <button disabled={!undoable} title={'remove all'} className={'btn-delete btn-delete-all'} onClick={handleDeleteAll}>
+                <button disabled={!undoable} title={'remove all'} className={'btn-delete btn-delete-all'}
+                        onClick={handleDeleteAll}>
                     <MdDeleteSweep />
-                    <span className={'btn-label'}>remove all</span>
+                    <span className={'btn-label'}>remove all (will clear undo history)</span>
                 </button>
             </div>
             <ol>
