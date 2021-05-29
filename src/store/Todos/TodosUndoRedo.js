@@ -1,7 +1,7 @@
 import React from 'react'
 import { ActionCreators as UndoActionCreators } from 'redux-undo'
 import { connect } from 'react-redux'
-import { FaUndoAlt, FaRedoAlt } from 'react-icons/fa';
+import { FaUndoAlt, FaRedoAlt } from 'react-icons/fa'
 
 let TodosUndoRedo = ({canUndo, canRedo, onUndo, onRedo}) => (
     <div className={'undo-redo'}>

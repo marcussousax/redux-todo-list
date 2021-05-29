@@ -1,0 +1,97 @@
+.list-wrapper {
+    align-self: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    max-width: 700px;
+    width: 100%;
+}
+
+.list-toolbar {
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+ol {
+    background-color: var(--white-color);
+    border: 1px solid var(--gray-color-6);
+    box-shadow: 0 10px 10px -5px var(--gray-color-1);
+    list-style: none;
+    margin-bottom: 200px;
+    margin-top: 0;
+    padding-left: 0;
+}
+
+ol:empty {
+    display: none;
+}
+
+li {
+    align-items: center;
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--gray-color-6);
+    display: flex;
+    flex-grow: 1;
+    font-size: 18px;
+    padding: 20px;
+}
+
+.list-item-content {
+    flex: 1;
+}
+
+.list-item-content.completed {
+    color: var(--gray-color-6);
+    text-decoration: line-through;
+}
+
+.btn-complete {
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: var(--gray-color-7);
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 0;
+}
+
+.btn-complete:hover,
+.btn-complete.completed {
+    color: var(--green-color-1);
+}
+
+.btn-delete {
+    background: transparent;
+    border: none;
+    color: var(--gray-color-7);
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 0;
+}
+
+.btn-delete:hover {
+    color: var(--red-color-1);
+}
+
+.btn-delete-all {
+    align-items: center;
+    display: flex;
+}
+
+.btn-delete-all .btn-label {
+    font-size: 12px;
+    margin-left: 30px;
+    position: absolute;
+    visibility: hidden;
+}
+.btn-delete-all:hover .btn-label {
+    visibility: visible;
+}
+
+.list-item {
+    background-color: var(--white-color);
+    height: 40px;
+}

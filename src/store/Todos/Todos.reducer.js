@@ -15,6 +15,8 @@ export default undoable(function(state = [], action) {
                     ? {...todo, completed: !todo.completed}
                     : todo
             )
+        case 'DELETE_ALL':
+            return action.payload
         default:
             return state
     }

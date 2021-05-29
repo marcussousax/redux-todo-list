@@ -18,3 +18,10 @@ export function deleteTodo(todo) {
         payload: todo
     }
 }
+
+export function deleteAllTodo() {
+    return {
+        type: 'DELETE_ALL',
+        payload: []
+    }
+}

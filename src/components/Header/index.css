@@ -1,0 +1,44 @@
+header {
+    align-items: center;
+    backdrop-filter: blur(5px);
+    background: var(--gray-color-5);
+    border-bottom: 1px solid var(--gray-color-1);
+    border-top: 1px solid var(--gray-color-1);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20px;
+    padding: 12px;
+    position: sticky;
+    top: 0;
+}
+
+h1 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 18px;
+    line-height: 0;
+    margin: 0;
+}
+
+header span {
+    color: var(--primary-color);
+    font-size: 13px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+header strong {
+    font-size: 15px;
+}
+
+.undo-redo button {
+    background: transparent;
+    border: none;
+}
+
+.undo-redo button:enabled {
+    cursor: pointer;
+}
+
+.undo-redo button:hover:enabled {
+    color: var(--primary-color);
+}

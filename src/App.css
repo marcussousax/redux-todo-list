@@ -1,4 +1,3 @@
-
 body {
     padding: 0;
 }
@@ -8,211 +7,45 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px var(--gray-color-1);
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #876e00;
+    background-color: var(--primary-color);
     outline: 1px solid slategrey;
 }
 
 body:before {
-    content: '';
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     background-color: #ffffff;
-    opacity: 0.3;
     background-image: linear-gradient(135deg, #f7d745 25%, transparent 25%), linear-gradient(225deg, #f7d745 25%, transparent 25%), linear-gradient(45deg, #f7d745 25%, transparent 25%), linear-gradient(315deg, #f7d745 25%, #ffffff 25%);
     background-position: 16px 0, 16px 0, 0 0, 0 0;
-    background-size: 32px 32px;
     background-repeat: repeat;
+    background-size: 32px 32px;
+    bottom: 0;
+    content: '';
+    left: 0;
+    opacity: 0.3;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
 }
 
-
 .App {
-    position: relative;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    position: relative;
 }
 
-h2 {
-    text-align: center;
-}
-
-
-input[type="checkbox"] {
-    width: 24px;
-    height: 24px;
-}
-
-li,
-input[type="text"] {
-    background: transparent;
-    font-size: 18px;
-    padding: 20px;
-    flex-grow: 1;
-}
-
-button[type="submit"] {
-    display: none;
-}
-
-.btn-complete {
-    border: none;
-    background: transparent;
-    color: #ccc;
-    font-size: 25px;
-    line-height: 0;
-    font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.btn-complete.completed {
-    color: #70ed42;
-}
-
-.btn-delete {
-    border: none;
-    background: transparent;
-    color: #ccc;
-    font-size: 25px;
-    line-height: 0;
-    font-weight: 600;
-    cursor: pointer;
-}
-.btn-delete:hover {
-    color: #ed4250;
-}
-
-.list-item {
-    background-color: white;
-    height: 40px;
-}
-
-/* List Component */
-.list-wrapper {
-    margin: 0 80px 0;
-}
-
-.undo-redo {
-    text-align: right;
-}
-
-.undo-redo button {
-    border: none;
-    background: transparent;
-}
-
-.undo-redo button:enabled {
-    cursor: pointer;
-}
-
-.undo-redo button:hover:enabled {
-    color: #876e00;
-}
-
-ol {
-    border: 1px solid #ddd;
-    list-style: none;
-    background-color: #fff;
-    box-shadow: 0 10px 10px -5px rgba(127, 127, 127, 0.3);
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 200px;
-}
-
-li {
-    background-color: white;
-    border-bottom: 1px solid #ddd;
-    display: flex;
+.app-blankstate {
     align-items: center;
-    justify-content: space-between;
-}
-
-li .completed {
-    color: #ddd;
-    text-decoration: line-through;
-}
-
-/* Header */
-header {
-    backdrop-filter: blur(5px);
-    position: sticky;
-    top: 0;
-    margin: 0 0 20px;
+    color: var(--primary-color);
     display: flex;
-    justify-content: space-between;
-    padding: 12px;
-
-    background: #e6e6e699;
-    border-top: 1px solid #7f7f7f4d;
-    border-bottom: 1px solid #7f7f7f4d;
-}
-
-header span {
-    margin: 0;
-    color: #876e00;
-    font-size: 13px;
-    text-transform: uppercase;
-}
-
-header strong {
-    font-size: 15px;
-}
-
-/* Footer */
-footer {
-    flex: 1;
-    align-items: flex-end;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 42px 0 29px rgba(127, 127, 127, 0.3);
-}
-
-footer form {
-    width: 100%;
-}
-
-.completed-status {
-    backdrop-filter: blur(5px);
-    background: #e6e6e699;
-    border-top: 1px solid #7f7f7f4d;
-    border-bottom: 1px solid #7f7f7f4d;
-    padding: 12px;
-}
-
-.completed-status p {
-    margin: 0;
-    color: #876e00;
-    font-size: 11px;
-    text-transform: uppercase;
-}
-
-.completed-status span {
-    font-size: 15px;
-    font-weight: 600;
-}
-
-footer input[type="text"] {
-    border: none;
+    flex: 0 1 calc(100% - 150px);
+    flex-direction: column;
+    font-size: 32px;
+    justify-content: center;
     text-align: center;
-    background: #fff;
-    width: calc(100% - 40px);
-    color: #666;
-}
-
-footer input[type="text"]:focus {
-    outline: none;
-}
-
-footer input[type="text"]::placeholder {
-    color: #999;
-    text-transform: uppercase;
-    font-size: 12px;
+    text-shadow: 1px 1px 30px var(--gray-color-2);
 }

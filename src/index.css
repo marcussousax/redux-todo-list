@@ -1,13 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+    --primary-color: #876e00;
+    --gray-color-1: #7f7f7f4d;
+    --gray-color-2: #999;
+    --gray-color-3: var(--gray-color-5);
+    --gray-color-4: #666;
+    --gray-color-5: #e6e6e699;
+    --gray-color-6: #ddd;
+    --gray-color-7: #ccc;
+    --white-color: #fff;
+    --green-color-1: #70ed42;
+    --red-color-1: #ed4250;
+}
+
