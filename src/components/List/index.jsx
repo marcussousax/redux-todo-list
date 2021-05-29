@@ -14,7 +14,7 @@ const List = ({children}) => {
 
     const handleDeleteAll = () => {
         dispatch(deleteAllTodo())
-        window.localStorage.clear('persist:root')
+        window.localStorage.clear()
         store.dispatch(ActionCreators.clearHistory())
     }
 
