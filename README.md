@@ -1,6 +1,10 @@
+#### If you dropped here by accident (or not), please feel free to analyze my code, sending me a message, creating an issue, PR's... so that we can exchange some knowledge. Cheers! 
+
+#### Se você, por algum acaso, caiu aqui, fique à vontade pra visualizar meu código e sugerir melhorias, assim podemos trocar conhecimento! :) 
+
 [Live demo](https://marcussousax.github.io/redux-todo-list/)
 
-
+---
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
