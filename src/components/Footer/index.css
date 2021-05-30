@@ -37,10 +37,13 @@ button[type="submit"] {
 }
 
 .completed-status {
+    align-items: center;
     backdrop-filter: blur(5px);
     background: var(--gray-color-5);
     border-bottom: 1px solid var(--gray-color-1);
     border-top: 1px solid var(--gray-color-1);
+    display: flex;
+    justify-content: space-between;
     padding: 12px;
 }
 
@@ -54,4 +57,24 @@ button[type="submit"] {
 .completed-status span {
     font-size: 15px;
     font-weight: 600;
+}
+
+.btn-reset-app {
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: var(--gray-color-2);
+    cursor: pointer;
+    display: flex;
+
+}
+
+.btn-reset-app:hover {
+    color: var(--red-color-1);
+}
+
+.btn-reset-app .btn-label {
+    font-size: 9px;
+    margin-left: 5px;
+    text-transform: uppercase;
 }

@@ -1,14 +1,25 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectCompletedTodosCount, selectTodosCount } from '../../store/Todos/Todos.selectors'
-import { addTodo } from '../../store/Todos/Todos.actions'
+import { ActionCreators } from 'redux-undo'
+import { MdHistory } from 'react-icons/md'
 
+import { selectCompletedTodosCount, selectTodosCount, selectUndoable } from '../../store/Todos/Todos.selectors'
+import { addTodo, deleteAllTodo } from '../../store/Todos/Todos.actions'
+import { store } from '../../store/store'
 import './index.css'
 
 const Footer = ({inputValue, setInputValue}) => {
 
     const dispatch = useDispatch()
     const todosCount = useSelector(selectTodosCount)
+    const undoable = useSelector(selectUndoable)
+
+
+    const handleResetApp = () => {
+        dispatch(deleteAllTodo())
+        window.localStorage.clear()
+        store.dispatch(ActionCreators.clearHistory())
+    }
 
     const CompletedCounter = () => {
         const completedCount = useSelector(selectCompletedTodosCount)
@@ -29,6 +40,12 @@ const Footer = ({inputValue, setInputValue}) => {
             <div className={'completed-status'}>
                 <p>{completedCount === 0 ? 'There are no' : <span>{completedCount}</span>} completed
                     item{completedCount > 1 && 's'}</p>
+
+                <button disabled={!undoable} title={'Reset App'} className={'btn-reset-app'}
+                        onClick={handleResetApp}>
+                    <MdHistory />
+                    <span className={'btn-label'}>Reset App (this will clear undo history)</span>
+                </button>
             </div>
         )
     }
