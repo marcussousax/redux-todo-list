@@ -46,7 +46,7 @@ li {
     text-decoration: line-through;
 }
 
-.btn-complete {
+:is(.btn-complete , .btn-edit, .btn-delete) {
     background: transparent;
     border: none;
     border-radius: 6px;
@@ -57,22 +57,20 @@ li {
     line-height: 0;
 }
 
-.btn-complete:hover,
+:is(.btn-complete , .btn-delete):disabled {
+    opacity: 0.2;
+}
+
+.btn-complete:not(:disabled):hover,
 .btn-complete.completed {
     color: var(--green-color-1);
 }
-
-.btn-delete {
-    background: transparent;
-    border: none;
-    color: var(--gray-color-7);
-    cursor: pointer;
-    font-size: 25px;
-    font-weight: 600;
-    line-height: 0;
+.btn-edit.is-editing,
+.btn-edit:not(:disabled):hover {
+    color: var(--blue-color-1);
 }
 
-.btn-delete:hover {
+.btn-delete:not(:disabled):hover {
     color: var(--red-color-1);
 }
 
@@ -88,4 +86,14 @@ li {
 .list-item {
     background-color: var(--white-color);
     height: 40px;
+}
+
+.list-item input[type="text"] {
+    font-family: inherit;
+    color: var(--blue-color-1);
+    border: none;
+    font-size: 21px;
+}
+.list-item input[type="text"]:focus {
+    outline: none;
 }

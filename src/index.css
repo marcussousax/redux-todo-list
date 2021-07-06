@@ -2,9 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
 body {
-    font-family: 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    font-family: var(--primary-font-family);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
@@ -16,6 +14,9 @@ code {
 }
 
 :root {
+    --primary-font-family: 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
     --primary-color: #876e00;
     --gray-color-1: #7f7f7f4d;
     --gray-color-2: #999;
@@ -28,5 +29,6 @@ code {
     --green-color-1: #70ed42;
     --red-color-1: #ed4250;
     --yellow-color-1: #f7d745;
+    --blue-color-1: #45bff7;
 }
 

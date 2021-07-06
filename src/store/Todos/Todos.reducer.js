@@ -1,12 +1,16 @@
 import undoable from 'redux-undo'
 
-export default undoable(function(state = [], action) {
+export default undoable(function (state = [], action) {
     switch (action.type) {
         case 'ADD':
             return [...state, {
                 value: action.payload, // In this case action.payload receives an input text value
                 completed: false
             }]
+        case 'EDIT':
+            return state.map(todo => todo.value === action.payload.todo.value
+                ? {...state, value: action.payload.newValue}
+                : todo)
         case 'DELETE':
             return state.filter(todo => todo.value !== action.payload.value)
         case 'UPDATE':

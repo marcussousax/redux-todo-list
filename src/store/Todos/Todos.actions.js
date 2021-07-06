@@ -5,6 +5,16 @@ export function addTodo(inputValue) {
     }
 }
 
+export function editTodo(todo, newValue) {
+    return {
+        type: 'EDIT',
+        payload: {
+            todo,
+            newValue
+        }
+    }
+}
+
 export function updateTodo(todo) {
     return {
         type: 'UPDATE',
